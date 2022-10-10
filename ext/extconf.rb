@@ -6,7 +6,7 @@ require 'generate_const'
 require 'generate_structs'
 
 include_path = ''
-if RUBY_PLATFORM =~ /win|mingw/i
+if RUBY_PLATFORM =~ /cygwin|mswin|mingw|bccwin|wince|emx/i
   x86_path     = 'C:\Program Files (x86)\IBM\WebSphere MQ\tools\c\include'
   include_path = File.directory?(x86_path) ? x86_path : 'C:\Program Files\IBM\WebSphere MQ\tools\c\include'
   dir_config('mqm', include_path, '.')
